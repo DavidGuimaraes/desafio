@@ -32,7 +32,8 @@ public class Proposta {
     @Column(name="data_ultima_edicao")
     private Date dataUltimaEdicao;
 
-    @Column(name="licitacao_id")
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="licitacao_id")
     @NotNull
     private Licitacao licitacao;
 
