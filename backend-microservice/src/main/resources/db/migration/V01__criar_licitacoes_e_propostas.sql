@@ -1,4 +1,4 @@
-CREATE TYPE tipo_classificacao AS ENUM('MENOR PRECO', 'NOTA PRECO');
+CREATE TYPE tipo_classificacao AS ENUM('MENOR_PRECO', 'NOTA_PRECO');
 
 CREATE SEQUENCE public.licitacao_licitacao_id_seq;
 
@@ -18,10 +18,10 @@ CREATE SEQUENCE public.proposta_proposta_id_seq;
 
 CREATE TABLE public.proposta (
                 proposta_id BIGINT NOT NULL DEFAULT nextval('public.proposta_proposta_id_seq'),
-                nota NUMERIC NOT NULL,
+                nota NUMERIC,
                 preco NUMERIC NOT NULL,
                 data_cadastro DATE NOT NULL,
-                classificacao INTEGER NOT NULL,
+                classificacao INTEGER,
                 licitacao_id BIGINT NOT NULL,
                 data_ultima_edicao DATE,
                 CONSTRAINT proposta_pk PRIMARY KEY (proposta_id)
