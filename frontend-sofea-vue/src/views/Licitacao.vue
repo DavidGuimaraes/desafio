@@ -30,12 +30,14 @@
               </tbody>
               <p v-else>Nenhum dado foi encontrado...</p>
             </table>
+            <!-- <p>{{ licitacoes }}</p> -->
         </div>
     </div>
 </template>
 
 <script>
 import Navbar from '../components/Navbar'
+import LicitacaoService from '../services/licitacaoservice'
 
 export default {
   name: 'app',
@@ -49,7 +51,7 @@ export default {
         'Otto', 
         'Billy', 
         '@mdo'],
-      licitacoes: [
+      licitacoesHardCoded: [
           {
             id: 1,
             descricao: "Teste Hard Coded",
@@ -57,8 +59,14 @@ export default {
             dataCadastro: "2020-02-06",
             dataUltimaEdicao: "-"
           }
-        ]
+        ],
+        licitacoes: []
     }
+  },
+  mounted() {
+    LicitacaoService.listar().then(response => {
+      this.licitacoes = response.data.content
+    })
   }
 }
 </script>

@@ -27,19 +27,21 @@
                   <td>{{ proposta.nota }}</td>
                   <td>{{ proposta.preco }}</td>
                   <td>{{ proposta.classificacao }}</td>
-                  <td>{{ proposta.licitacao.id }}</td>
+                  <td>{{ proposta.licitacaoId }}</td>
                   <td>{{ proposta.dataCadastro }}</td>
                   <td>{{ proposta.dataUltimaEdicao }}</td>
                 </tr>
               </tbody>
               <p v-else>Nenhum dado foi encontrado...</p>
             </table>
+            <!-- <p>{{ propostas }}</p> -->
         </div>
     </div>
 </template>
 
 <script>
 import Navbar from '../components/Navbar'
+import PropostaService from '../services/propostaservice'
 
 export default {
   name: 'app',
@@ -48,7 +50,7 @@ export default {
   },
   data() {
     return {
-      propostas: [
+      propostasHardCoded: [
           {
             id: 1,
             nota: 8.0,
@@ -64,8 +66,14 @@ export default {
             dataCadastro: "2020-02-06",
             dataUltimaEdicao: "-"
           }
-        ]
+      ],
+      propostas: []
     }
+  },
+  mounted() {
+    PropostaService.listar().then(response => {
+      this.propostas = response.data.content
+    })
   }
 }
 </script>
