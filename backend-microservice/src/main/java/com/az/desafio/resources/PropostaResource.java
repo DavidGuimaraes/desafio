@@ -16,6 +16,7 @@ import javax.validation.Valid;
 import java.math.BigInteger;
 import java.net.URI;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/rest/propostas")
 public class PropostaResource {
