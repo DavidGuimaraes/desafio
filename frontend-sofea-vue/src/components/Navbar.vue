@@ -9,15 +9,25 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
             <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Licitações</a>
+            <a class="nav-item nav-link" href="#"><feather-activity></feather-activity>Licitações</a>
             <a class="nav-item nav-link" href="#">Propostas</a>
             <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </div>
         </div>
     </nav>
+
+    <activity-icon></activity-icon>
   </div>
 </template>
 
-<script></script>
+<script>
+import { Activity } from 'vue-feather-icon'
+
+  export default {
+    components: {
+      ActivityIcon: Activity
+    }
+  }
+</script>
 
 <style></style>
