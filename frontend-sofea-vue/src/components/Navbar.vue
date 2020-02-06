@@ -5,10 +5,10 @@
         <img src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#"><feather-activity></feather-activity>Licitações</a>
-            <a class="nav-item nav-link" href="#">Propostas</a>
-            <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              <router-link to="/" class="nav-item nav-link active">Home <span class="sr-only">(current)</span></router-link>
+              <router-link to="/licitacoes" class="nav-item nav-link">Licitações</router-link>
+              <router-link to="/propostas" class="nav-item nav-link">Propostas</router-link>
+              <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </div>
         </div>
     </nav>
