@@ -20,6 +20,7 @@ public class Licitacao {
     @NotNull
     private String descricao;
 
+    @Enumerated(EnumType.STRING)
     @Column(name="tipo_classificacao")
     @NotNull
     private TipoClassificacao tipoClassificacao;
