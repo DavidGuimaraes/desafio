@@ -1,6 +1,9 @@
 package com.az.desafio.models;
 
 import com.az.desafio.models.enums.TipoClassificacao;
+import com.az.desafio.utils.PostgreSQLEnumType;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -9,6 +12,10 @@ import java.util.Date;
 
 @Entity
 @Table(name="licitacao")
+@TypeDef(
+        name = "pgsql_enum",
+        typeClass = PostgreSQLEnumType.class
+)
 public class Licitacao {
 
     @Id
@@ -23,6 +30,7 @@ public class Licitacao {
     @Enumerated(EnumType.STRING)
     @Column(name="tipo_classificacao")
     @NotNull
+    @Type( type = "pgsql_enum" )
     private TipoClassificacao tipoClassificacao;
 
     @Column(name="data_cadastro")
