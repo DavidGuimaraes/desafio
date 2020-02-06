@@ -14,7 +14,7 @@ public interface PropostaMapper {
 
     @Mappings({
             @Mapping(target = "id", source = "propostaId"),
-            @Mapping(target = "licitacaoId", source = "licitacao.id")
+            @Mapping(target = "licitacaoId", source = "licitacao.licitacaoId")
     })
     PropostaDto entityToDto(Proposta proposta);
 
@@ -22,7 +22,7 @@ public interface PropostaMapper {
 
     @Mappings({
             @Mapping(target = "propostaId", source = "id"),
-            @Mapping(target = "licitacao.id", source = "licitacaoId")
+            @Mapping(target = "licitacao.licitacaoId", source = "licitacaoId")
     })
     Proposta dtoToEntity(PropostaDto propostaDto);
 
