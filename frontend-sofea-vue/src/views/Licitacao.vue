@@ -20,6 +20,7 @@
                 <th scope="col">Tipo de Classificação</th>
                 <th scope="col">Data de Cadastro</th>
                 <th scope="col">Data Última Edição</th>
+                <th scope="col">Ações</th>
               </tr>
             </thead>
             <tbody v-if="licitacoes.length > 0">
@@ -29,6 +30,9 @@
                 <td>{{ licitacao.tipoClassificacao }}</td>
                 <td>{{ licitacao.dataCadastro }}</td>
                 <td>{{ licitacao.dataUltimaEdicao }}</td>
+                <td>
+                  <button type="button" class="btn btn-danger" @click="deletar(licitacao.id)">Deletar</button>
+                </td>
               </tr>
             </tbody>
             <p v-else>Nenhum dado foi encontrado...</p>
@@ -64,13 +68,25 @@ export default {
             dataUltimaEdicao: "-"
           }
         ],
-        licitacoes: []
+        licitacoes: [],
     }
   },
   mounted() {
-    LicitacaoService.listar().then(response => {
-      this.licitacoes = response.data.content
-    })
+    this.listar()
+  },
+  methods: {
+    listar() {
+      LicitacaoService.listar().then(response => {
+        this.licitacoes = response.data.content
+      })
+    },
+    deletar(id) {
+      LicitacaoService.deletar(id).then(response => {
+        alert('Deletado com sucesso!');
+        this.listar();
+        response
+      })
+    }
   }
 }
 </script>

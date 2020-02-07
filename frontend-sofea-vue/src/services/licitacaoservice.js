@@ -11,5 +11,9 @@ export default {
 
     salvar:(licitacaoDto) => {
         return http.post('licitacoes',licitacaoDto);
+    },
+
+    deletar:(id) => {
+        return http.delete('licitacoes/'+id);
     }
 }
