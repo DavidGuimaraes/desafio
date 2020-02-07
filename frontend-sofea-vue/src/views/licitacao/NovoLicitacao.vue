@@ -62,6 +62,7 @@ export default {
           LicitacaoService.salvar(this.licitacaoDto).then(response => {
               alert('Salvo com sucesso! :)');
               response
+              this.licitacaoDto = {descricao: "",tipoClassificacao: ""}
           })
       }
   }
