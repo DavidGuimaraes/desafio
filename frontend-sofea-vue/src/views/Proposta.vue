@@ -5,6 +5,9 @@
         <div class="container">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <b>PROPOSTAS</b>
+            <div class="form-inline">
+              <router-link to="/propostas/novo" class="btn btn-outline-success my-2 my-sm-0">Novo</router-link>
+            </div>
           </div>
           <br />
           <br />
@@ -36,6 +39,7 @@
             </table>
             <!-- <p>{{ propostas }}</p> -->
         </div>
+        <keep-alive><router-view /></keep-alive>
     </div>
 </template>
 
