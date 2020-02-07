@@ -11,7 +11,6 @@
             <p class="lead">Este é um sistema simples de classificação de propostas de licitações. Um sistema simples e ainda em evolução, mas perfeito para a AZ contratar o David! :)</p>
             <hr class="my-4">
             <p>Gostaria de conhecer um pouco mais o meu trabalho? Visite os links abaixo!</p>
-            <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
             <p>Under Construction...</p>
           </div>
         </div>

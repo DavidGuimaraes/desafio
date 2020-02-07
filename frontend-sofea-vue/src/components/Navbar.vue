@@ -8,7 +8,6 @@
               <router-link to="/" class="nav-item nav-link active">Home <span class="sr-only">(current)</span></router-link>
               <router-link to="/licitacoes" class="nav-item nav-link">Licitações</router-link>
               <router-link to="/propostas" class="nav-item nav-link">Propostas</router-link>
-              <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </div>
         </div>
     </nav>

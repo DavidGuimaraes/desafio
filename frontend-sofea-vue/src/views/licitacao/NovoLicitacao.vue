@@ -6,7 +6,6 @@
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <b>NOVA LICITAÇÃO</b>
             </div>
-            <!-- @submit.prevent="save" -->
             <form>
                 <div class="mb-3">
                     <label for="descricao">Descrição</label>
@@ -20,17 +19,13 @@
                                 {{ tipo }}
                             </option>
                         </select>
-                        <!-- <select class="custom-select d-block w-100" id="country" v-model="licitacaoDto.tipoClassificacao">
-                            <option value="Menor Preço">Menor Preço</option>
-                            <option value="Nota Preço">Nota Preço</option>
-                        </select> -->
                     </div>
                 </div>
                 <button type="button" class="btn btn-primary" v-on:click="save">Salvar</button>
                 <router-link to="/licitacoes/" class="btn btn-danger">Cancelar</router-link>
             </form>
         </div>
-        <p>{{ licitacaoDto }}</p>
+        <!-- <p>{{ licitacaoDto }}</p> -->
     </div>
 </template>
 
