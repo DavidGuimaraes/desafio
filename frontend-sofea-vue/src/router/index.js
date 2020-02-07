@@ -7,6 +7,7 @@ import NovoLicitacao from '@/views/licitacao/NovoLicitacao'
 import EditarLicitacao from '@/views/licitacao/EditarLicitacao'
 import Proposta from '@/views/Proposta'
 import NovoProposta from '@/views/proposta/NovoProposta'
+import EditarProposta from '@/views/proposta/EditarProposta'
 
 Vue.use(Router)
 
@@ -52,6 +53,13 @@ const routes = [
         name: 'novopropostateste',
         path: '/propostas/novo',
         component: NovoProposta,
+    },
+    {
+        //TODO - Workaround!!! Resolver o problema de renderizacao do parent e child para remover essa rota temporaria
+        name: 'editarpropostateste',
+        path: '/propostas/editar/:id',
+        component: EditarProposta,
+        props: true,
     }
 ]
 
