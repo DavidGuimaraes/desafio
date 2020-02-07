@@ -1,19 +1,35 @@
-# Getting Started
+# Desafio Técnico - AZ Informática | Backend - Microsserviço
 
-### Reference Documentation
-For further reference, please consider the following sections:
+Este projeto faz parte do desafio técnico proposto pela empresa AZ Informática como parte de seu processo seletivo para contratação.
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.2.4.RELEASE/maven-plugin/)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.2.4.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.2.4.RELEASE/reference/htmlsingle/#boot-features-jpa-and-spring-data)
-* [Flyway Migration](https://docs.spring.io/spring-boot/docs/2.2.4.RELEASE/reference/htmlsingle/#howto-execute-flyway-database-migrations-on-startup)
 
-### Guides
-The following guides illustrate how to use some features concretely:
+## Getting Started
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+As instruções contidas nesse arquivo tem a finalidade de clarificar os procedimentos necessários para rodar a RESTful API desenvolvida como backend para o desafio.
 
+
+### Prerequisites
+
+A aplicação de backend foi desenvolvida utilizando Spring e sua dependência Web, que contém um servidor de aplicação Tomcat embutido. Para rodá-la, siga as instruções a seguir.
+
+
+### Installing
+
+Nenhuma instalação é estritamente necessária nesse projeto. Apenas recomenda-se utilizar o software IntelliJ como IDE. Para clonar  o projeto para sua máquina, utilize um dos comandos a seguir em um diretório de escolha:
+
+Com HTTPS
+
+```
+git clone https://github.com/DavidGuimaraes/desafio.git
+```
+
+Ou usando SSH
+
+```
+git clone git@github.com:DavidGuimaraes/desafio.git
+```
+
+
+## Deployment
+
+Para rodar a aplicação, basta executar seu método main em modo Run ou Debug.
