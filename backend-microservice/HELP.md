@@ -10,7 +10,10 @@ As instruções contidas nesse arquivo tem a finalidade de clarificar os procedi
 
 ### Prerequisites
 
-A aplicação de backend foi desenvolvida utilizando Spring e sua dependência Web, que contém um servidor de aplicação Tomcat embutido. Para rodá-la, siga as instruções a seguir.
+A aplicação de backend foi desenvolvida utilizando Spring e sua dependência Web, que já contém um servidor de aplicação Tomcat embutido. Sendo assim, um dos primeiros requisitos para rodar a aplicação é o Apache Maven. Ainda, foi utilizado o SGBD Relacional PostgreSQL. É possível utilizar outro SGBD de sua preferência, apenas atente-se às configurações de conexão que estão no arquivo application.properties. Para mais informações a respeito da instalação do Apache Maven e do PostreSQL, consulta os links abaixo:
+
+* [Maven](https://maven.apache.org/)
+* [PostgreSQL](https://www.postgresql.org/)
 
 
 ### Installing
