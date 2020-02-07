@@ -28,7 +28,6 @@ public class PropostaResource {
     private PropostaMapper propostaMapper;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-//    @PreAuthorize("isAuthenticated()")
     public Page<PropostaDto> listar(Pageable pageable) throws Exception {
         try {
             pageable = pageable.previousOrFirst();
@@ -40,7 +39,6 @@ public class PropostaResource {
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-//    @PreAuthorize("isAuthenticated()")
     public PropostaDto pesquisarPeloId(@PathVariable(value = "id") BigInteger id) throws Exception {
         Proposta proposta = propostaService.findById(id);
         return propostaMapper.entityToDto(proposta);

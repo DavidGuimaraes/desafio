@@ -32,10 +32,6 @@ public class LicitacaoService {
         }
     }
 
-    /*public Optional<Licitacao> findByClassificacao(TipoClassificacao classificacao){
-        return this.dao.findByClassificacao(classificacao);
-    }*/
-
     public List<TipoClassificacao> findTiposClassificacao(){
         return this.dao.findTiposClassificacao();
     }

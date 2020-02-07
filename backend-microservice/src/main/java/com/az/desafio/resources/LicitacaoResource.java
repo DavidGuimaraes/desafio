@@ -5,14 +5,11 @@ import com.az.desafio.models.dto.LicitacaoDto;
 import com.az.desafio.models.enums.TipoClassificacao;
 import com.az.desafio.models.mappers.LicitacaoMapper;
 import com.az.desafio.services.LicitacaoService;
-import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -20,9 +17,7 @@ import javax.validation.Valid;
 import java.math.BigInteger;
 import java.net.URI;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -36,7 +31,6 @@ public class LicitacaoResource {
     private LicitacaoMapper licitacaoMapper;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-//    @PreAuthorize("isAuthenticated()")
     public Page<LicitacaoDto> listar(Pageable pageable) throws Exception {
         try {
             pageable = pageable.previousOrFirst();
@@ -48,20 +42,10 @@ public class LicitacaoResource {
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-//    @PreAuthorize("isAuthenticated()")
     public LicitacaoDto pesquisarPeloId(@PathVariable(value = "id") BigInteger id) throws Exception {
         Licitacao licitacao = licitacaoService.findById(id);
         return licitacaoMapper.entityToDto(licitacao);
     }
-
-    /*@GetMapping(params = "classificacao")
-    @PreAuthorize("isAuthenticated()")
-    public Optional<LicitacaoDto> pesquisarPelaDescricao(@RequestParam TipoClassificacao classificacao, Pageable pageable) {
-        Optional<Licitacao> bairros = licitacaoService.findByClassificacao(classificacao);
-        return bairros.map(naBairro -> {
-            return licitacaoMapper.entityToDto(naBairro);
-        });
-    }*/
 
     @GetMapping(value = "/classificacoes")
     public List<String> pesquisarTiposDeClassificacao() throws Exception {
