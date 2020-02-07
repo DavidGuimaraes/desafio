@@ -19,6 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.validation.Valid;
 import java.math.BigInteger;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -61,6 +62,16 @@ public class LicitacaoResource {
             return licitacaoMapper.entityToDto(naBairro);
         });
     }*/
+
+    @GetMapping(value = "/classificacoes")
+    public List<String> pesquisarTiposDeClassificacao() throws Exception {
+        List<TipoClassificacao> tipos = licitacaoService.findTiposClassificacao();
+        List<String> tiposEmString = new ArrayList<>();
+        tipos.forEach(tipoClassificacao -> {
+            tiposEmString.add(tipoClassificacao.getTipo());
+        });
+        return tiposEmString;
+    }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<LicitacaoDto> salvar(@Valid @RequestBody LicitacaoDto licitacaoDto){

@@ -36,6 +36,10 @@ public class LicitacaoService {
         return this.dao.findByClassificacao(classificacao);
     }*/
 
+    public List<TipoClassificacao> findTiposClassificacao(){
+        return this.dao.findTiposClassificacao();
+    }
+
     public Licitacao save(Licitacao licitacao){
         licitacao.setDataCadastro(new Date());
         licitacao.setDataUltimaEdicao(null);
