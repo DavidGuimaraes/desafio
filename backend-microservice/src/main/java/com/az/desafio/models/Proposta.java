@@ -6,6 +6,9 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 
+// TODO - O campo Fornecedor foi esquecido anteriormente. Alterar a estrutura dessa tabela para comportar o campo Fornecedor
+// TODO - Apos isso, inserir dados de fornecedores no banco de dados para nao ficar null
+
 @Entity
 @Table(name="proposta")
 public class Proposta {
