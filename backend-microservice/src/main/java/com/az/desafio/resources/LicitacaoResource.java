@@ -19,6 +19,9 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
+// TODO - resolver o problema com CORS para que a anotação @CrossOrigin não seja mais necessária
+// TODO - implementar uma classe ExceptionHandler
+
 @CrossOrigin
 @RestController
 @RequestMapping("/rest/licitacoes")

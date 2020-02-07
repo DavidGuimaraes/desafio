@@ -13,6 +13,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+// TODO - implementar uma classe ExceptionHandler
+
 @Service
 public class LicitacaoService {
 

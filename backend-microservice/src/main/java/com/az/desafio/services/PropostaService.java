@@ -11,6 +11,8 @@ import java.math.BigInteger;
 import java.util.Date;
 import java.util.Optional;
 
+// TODO - implementar uma classe ExceptionHandler
+
 @Service
 public class PropostaService {
 

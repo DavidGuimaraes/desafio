@@ -16,6 +16,9 @@ import javax.validation.Valid;
 import java.math.BigInteger;
 import java.net.URI;
 
+// TODO - resolver o problema com CORS para que a anotação @CrossOrigin não seja mais necessária
+// TODO - implementar uma classe ExceptionHandler
+
 @CrossOrigin
 @RestController
 @RequestMapping("/rest/propostas")
