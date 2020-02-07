@@ -1,5 +1,7 @@
 import { http } from './config'
 
+// TODO - Implementar a validacao dos dados antes de se comunicar com a API
+
 export default {
     listar:() => {
         return http.get('propostas')

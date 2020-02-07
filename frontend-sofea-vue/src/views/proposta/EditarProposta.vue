@@ -1,4 +1,6 @@
 <template>
+<!-- TODO - Implementar mensagens/notificacoes para o usuario aqui nessa tela -->
+<!-- TODO - Tratar possiveis excecoes disparadas pela API -->
     <div>
         <Navbar />
         <br />
