@@ -7,5 +7,9 @@ export default {
 
     salvar:(propostaDto) => {
         return http.post('propostas',propostaDto);
+    },
+
+    deletar:(id) => {
+        return http.delete('propostas/'+id);
     }
 }

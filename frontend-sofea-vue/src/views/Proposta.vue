@@ -22,6 +22,7 @@
                   <th scope="col">Licitação</th>
                   <th scope="col">Data de Cadastro</th>
                   <th scope="col">Data Última Edição</th>
+                  <th scope="col">Ações</th>
                 </tr>
               </thead>
               <tbody v-if="propostas.length > 0">
@@ -33,6 +34,9 @@
                   <td>{{ proposta.licitacaoId }}</td>
                   <td>{{ proposta.dataCadastro }}</td>
                   <td>{{ proposta.dataUltimaEdicao }}</td>
+                  <td>
+                    <button type="button" class="btn btn-danger" @click="deletar(proposta.id)">Deletar</button>
+                  </td>
                 </tr>
               </tbody>
               <p v-else>Nenhum dado foi encontrado...</p>
@@ -75,9 +79,21 @@ export default {
     }
   },
   mounted() {
-    PropostaService.listar().then(response => {
-      this.propostas = response.data.content
-    })
+    this.listar()
+  },
+  methods: {
+    listar() {
+      PropostaService.listar().then(response => {
+        this.propostas = response.data.content
+      })
+    },
+    deletar(id) {
+      PropostaService.deletar(id).then(response => {
+        alert('Deletado com sucesso!');
+        this.listar();
+        response
+      })
+    }
   }
 }
 </script>
