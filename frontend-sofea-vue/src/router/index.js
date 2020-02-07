@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Home from '@/views/Home'
 import Licitacao from '@/views/Licitacao'
 import NovoLicitacao from '@/views/licitacao/NovoLicitacao'
+import EditarLicitacao from '@/views/licitacao/EditarLicitacao'
 import Proposta from '@/views/Proposta'
 import NovoProposta from '@/views/proposta/NovoProposta'
 
@@ -38,6 +39,13 @@ const routes = [
         name: 'novolicitacaoteste',
         path: '/licitacoes/novo',
         component: NovoLicitacao,
+    },
+    {
+        //TODO - Workaround!!! Resolver o problema de renderizacao do parent e child para remover essa rota temporaria
+        name: 'editarlicitacaoteste',
+        path: '/licitacoes/editar/:id',
+        component: EditarLicitacao,
+        props: true,
     },
     {
         //TODO - Workaround!!! Resolver o problema de renderizacao do parent e child para remover essa rota temporaria

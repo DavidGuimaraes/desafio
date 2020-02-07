@@ -15,5 +15,13 @@ export default {
 
     deletar:(id) => {
         return http.delete('licitacoes/'+id);
+    },
+
+    buscarPeloId:(id) => {
+        return http.get('licitacoes/'+id);
+    },
+
+    editar:(licitacaoBuscada) => {
+        return http.put('licitacoes', licitacaoBuscada);
     }
 }

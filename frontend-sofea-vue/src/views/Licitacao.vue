@@ -31,7 +31,10 @@
                 <td>{{ licitacao.dataCadastro }}</td>
                 <td>{{ licitacao.dataUltimaEdicao }}</td>
                 <td>
-                  <button type="button" class="btn btn-danger" @click="deletar(licitacao.id)">Deletar</button>
+                  <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-danger" @click="deletar(licitacao.id)">Deletar</button>
+                    <router-link :to="{name: 'editarlicitacaoteste', params: {id: licitacao.id}}" class="btn btn-primary">Editar</router-link>
+                  </div>
                 </td>
               </tr>
             </tbody>
