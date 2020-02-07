@@ -1,37 +1,41 @@
 <template>
     <div>
-        <Navbar />
-        <br />
-        <div class="container">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <b>LICITAÇŌES</b>
+      <Navbar />
+      <br />
+      <div class="container">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <b>LICITAÇŌES</b>
+          <div class="form-inline">
+            <router-link to="/licitacoes/novo" class="btn btn-outline-success my-2 my-sm-0">Novo</router-link>
           </div>
-          <br />
-          <br />
-          <br />
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Id</th>
-                  <th scope="col">Descrição</th>
-                  <th scope="col">Tipo de Classificação</th>
-                  <th scope="col">Data de Cadastro</th>
-                  <th scope="col">Data Última Edição</th>
-                </tr>
-              </thead>
-              <tbody v-if="licitacoes.length > 0">
-                <tr v-for="(licitacao, index) in licitacoes" v-bind:key="index">
-                  <th scope="row">{{ licitacao.id }}</th>
-                  <td>{{ licitacao.descricao }}</td>
-                  <td>{{ licitacao.tipoClassificacao }}</td>
-                  <td>{{ licitacao.dataCadastro }}</td>
-                  <td>{{ licitacao.dataUltimaEdicao }}</td>
-                </tr>
-              </tbody>
-              <p v-else>Nenhum dado foi encontrado...</p>
-            </table>
-            <!-- <p>{{ licitacoes }}</p> -->
         </div>
+        <br />
+        <br />
+        <br />
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Tipo de Classificação</th>
+                <th scope="col">Data de Cadastro</th>
+                <th scope="col">Data Última Edição</th>
+              </tr>
+            </thead>
+            <tbody v-if="licitacoes.length > 0">
+              <tr v-for="(licitacao, index) in licitacoes" v-bind:key="index">
+                <th scope="row">{{ licitacao.id }}</th>
+                <td>{{ licitacao.descricao }}</td>
+                <td>{{ licitacao.tipoClassificacao }}</td>
+                <td>{{ licitacao.dataCadastro }}</td>
+                <td>{{ licitacao.dataUltimaEdicao }}</td>
+              </tr>
+            </tbody>
+            <p v-else>Nenhum dado foi encontrado...</p>
+          </table>
+          <!-- <p>{{ licitacoes }}</p> -->
+        </div>
+        <keep-alive><router-view /></keep-alive>
     </div>
 </template>
 
