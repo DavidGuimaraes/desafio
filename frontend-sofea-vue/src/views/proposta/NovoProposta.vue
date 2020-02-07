@@ -28,6 +28,7 @@
 
 <script>
 import Navbar from '@/components/Navbar'
+import PropostaService from '@/services/propostaservice'
 
 export default {
   name: 'app',
@@ -45,7 +46,13 @@ export default {
       }
   },
   methods: {
-      save() {}
+      save() {
+          PropostaService.salvar(this.propostaDto).then(response => {
+              alert('Salvo com sucesso! :)');
+              response
+              this.propostaDto = {nota: "0",preco: "0.0", licitacaoId: ""}
+          })
+      }
   }
 }
 </script>
